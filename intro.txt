@@ -1,0 +1,12 @@
+agenda =>
+Teach the modularity of the files structure.
+it include 
+1- Routes folder : In which we define our all routes (app.post("/eef", ),app.get("/edfrefrc", ) etc).  
+2- Controller: In which we define our logics of backend tasks.
+3- model: It contain stucture of files.
+4- confrig: means it contain file with code which connect our server to database.
+5- .env file: Environment file which contain port number,database URL etc which is used during the deployment . And Deployment always done 
+   in  pipline (stage by stage). 
+
+After that to reduce our effort to restart the server again and again we install nodemon ,it automatically restart the server after  changes in code .
+To confrigue this we also change script in package.json file , we add ("dev":"Nodemon index.js") in script part .
