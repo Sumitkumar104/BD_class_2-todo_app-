@@ -26,5 +26,5 @@ dbconnect();
 
 // default route
 app.get("/",(req,res)=>{
-    res.send(`<h1> welocome to my page</h1>`)
+    res.send(`<h1> welocome to my page day 3</h1>`)
 })

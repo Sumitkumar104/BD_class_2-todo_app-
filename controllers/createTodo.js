@@ -8,6 +8,8 @@ exports.createTodo = async (req, res) => {
     const { title, description } = req.body;
 
     // Create a new Todo object and insert it into the database using the Todo model
+
+    // our Mongoose library provide us many function like .create, .find one, .find by id etc
     const response = await Todo.create({ title, description });
 
     // Respond with a success status, the created data, and a success message
