@@ -11,13 +11,13 @@ const todoscheme =new mongoose.Schema({
         required:true,
         maxLength:100,
     },
-    createdat:{
+    createdate:{
         type:Date,
         required:true,
         default:Date.now(),
 
     },
-    updatedat:{
+    updatedate:{
         type:Date,
         required:true,
         default:Date.now(),

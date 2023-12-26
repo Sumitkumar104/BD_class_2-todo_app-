@@ -1,5 +1,5 @@
 // Import the Todo model from the "../models/Todo" file
-const Todo = require("../models/Todo");
+const Todo = require("../models/Todoschema");
 
 // Define an asynchronous function named "createtodo"
 exports.createtodo = async (req, res) => {

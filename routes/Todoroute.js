@@ -1,5 +1,10 @@
-const express=require('express');
-const router=express.router;
+const express = require("express");
+const router = express.Router();
+const { createTodo } = require("../controllers/createTodo");
 
+// Middleware to parse JSON requests
+router.use(express.json());
 
-const {createTodo}=require("../controllers/createTodo");
+router.post("/createTodo",()=>{createTodo} );
+
+module.exports = router;
