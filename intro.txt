@@ -52,7 +52,7 @@ Information about the mongoose =>
       Mongoose emits events for various connection events (e.g., connected, disconnected, error).
       Here's a simple example of using Mongoose to define a schema, create a model, and perform CRUD operations:
 
-javascript
+javascript Code
    
       const mongoose = require('mongoose');
       mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
