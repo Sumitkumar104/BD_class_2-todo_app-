@@ -10,3 +10,76 @@ it include
 
 After that to reduce our effort to restart the server again and again we install nodemon ,it automatically restart the server after  changes in code .
 To confrigue this we also change script in package.json file , we add ("dev":"Nodemon index.js") in script part .
+
+
+Information about the mongoose => 
+
+      Mongoose is an ODM (Object Data Modeling) library for MongoDB and provides a straightforward way to work with MongoDB databases using Node.js. Here are some common functions and features supported by Mongoose:
+
+ Connecting to MongoDB:
+
+      mongoose.connect(): Establishes a connection to the MongoDB database.
+      Defining Models:
+
+      mongoose.model(): Defines a schema and creates a model for MongoDB documents.
+ CRUD Operations:
+
+      Model.create(): Creates a new document.
+      Model.find(): Retrieves documents from the collection.
+      Model.findOne(): Retrieves a single document.
+      Model.findByIdAndUpdate(): Finds a document by ID and updates it.
+      Model.findOneAndDelete(): Finds a document by ID and deletes it.
+ Querying:
+
+      Mongoose provides a fluent query API for building complex queries.
+      Middleware:
+
+      pre and post hooks: Middleware functions that run before or after certain operations (e.g., save, validate).
+      Validation:
+
+      Mongoose allows you to define and enforce data validation using schema definitions.
+      Population:
+
+      populate(): Allows you to reference documents in other collections and pull in the referenced data.
+      Indexes:
+
+      index(): Enables the creation of indexes on specific fields to improve query performance.
+      Aggregation:
+
+      Mongoose supports the MongoDB aggregation framework for performing advanced data manipulations.
+      Connection Events:
+
+      Mongoose emits events for various connection events (e.g., connected, disconnected, error).
+      Here's a simple example of using Mongoose to define a schema, create a model, and perform CRUD operations:
+
+javascript
+   
+      const mongoose = require('mongoose');
+      mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
+
+      const personSchema = new mongoose.Schema({
+      name: String,
+      age: Number,
+      });
+
+      const Person = mongoose.model('Person', personSchema);
+
+      // Create a new person
+      const newPerson = new Person({ name: 'John Doe', age: 30 });
+      newPerson.save();
+
+      // Find all persons
+      Person.find({}, (err, persons) => {
+      if (err) throw err;
+      console.log(persons);
+      });
+
+      // Find a person by ID and update
+      Person.findByIdAndUpdate('someId', { age: 31 }, (err, person) => {
+      if (err) throw err;
+      console.log(person);
+      });
+
+      // Disconnect from the database
+      mongoose.disconnect();
+      Make sure to replace 'mongodb://localhost:27017/mydatabase' with the connection string for your MongoDB instance.
