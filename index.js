@@ -17,7 +17,7 @@ app.use("/api/v1",Todoroute);
 
 // start our server
 app.listen(PORT,()=>{
-    console.log("your server will start at port ");
+    console.log(`your server will start at port ${PORT}`);
 })
 
 // conect to the database

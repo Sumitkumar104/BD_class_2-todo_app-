@@ -2,7 +2,7 @@
 const Todo = require("../models/Todoschema");
 
 // Define an asynchronous function named "createtodo"
-exports.createtodo = async (req, res) => {
+exports.createTodo = async (req, res) => {
   try {
     // Extract the "title" and "description" from the request's body
     const { title, description } = req.body;
